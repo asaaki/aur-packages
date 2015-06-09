@@ -66,7 +66,6 @@ mksrcinfo:
 check:
 	@echo [CHECK] CURRENT_PACKAGE = $(CURRENT_PACKAGE)
 	@namcap $(NAMCAP_ARGS) $(CURRENT_PACKAGE)/PKGBUILD
-	@find $(CURRENT_PACKAGE) -name $(CURRENT_PACKAGE)-*$(PKG_SUFFIX) -exec namcap $(NAMCAP_ARGS) {} \;
 .PHONY: check
 
 clean: clean-archives
