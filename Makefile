@@ -39,12 +39,12 @@ endif
 fetch-and-pull:
 	@echo [FETCH-AND-PULL] CURRENT_PACKAGE = $(CURRENT_PACKAGE)
 	@$(GIT_SSH_CMD) git fetch $(CURRENT_PACKAGE)
-	@$(GIT_SSH_CMD) git subtree pull --prefix $(CURRENT_PACKAGE) $(CURRENT_PACKAGE) master
+	@$(GIT_SSH_CMD) git subtree pull --prefix $(CURRENT_PACKAGE) $(CURRENT_PACKAGE) master --squash
 .PHONY: fetch-and-pull
 
 push:
 	@echo [PUSH] CURRENT_PACKAGE = $(CURRENT_PACKAGE)
-	@$(GIT_SSH_CMD) git subtree push --prefix $(CURRENT_PACKAGE) $(CURRENT_PACKAGE) master
+	@$(GIT_SSH_CMD) git subtree push --prefix $(CURRENT_PACKAGE) $(CURRENT_PACKAGE) master --squash
 
 checksum:
 	@cd $(CURRENT_PACKAGE) && updpkgsums
