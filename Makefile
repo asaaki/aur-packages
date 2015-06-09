@@ -11,7 +11,7 @@
 AVAILABLE_PACKAGES=$(sort $(subst /,,$(dir $(wildcard */))))
 PKG_SUFFIX=.pkg.tar.xz
 MAKEPKG_ARGS=--clean --syncdeps --noarchive
-MAKEPKG_ARCHIVE_ARGS=--clean --syncdeps
+MAKEPKG_ARCHIVE_ARGS=$(MAKEPKG_ARGS) --source -f
 NAMCAP_ARGS=-i
 GIT_SSH_CMD=GIT_SSH_COMMAND="ssh -o VisualHostKey=no"
 
