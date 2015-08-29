@@ -59,12 +59,6 @@ makepkg:
 	@cd $(CURRENT_PACKAGE) && makepkg $(MAKEPKG_ARGS)
 .PHONY: makepkg
 
-# NOTE: Remove after 2015-08-08 (AUR4 will be the default then)
-makepkg-archive:
-	@echo [MAKEPKG] CURRENT_PACKAGE = $(CURRENT_PACKAGE)
-	@cd $(CURRENT_PACKAGE) && makepkg $(MAKEPKG_ARCHIVE_ARGS)
-.PHONY: makepkg-archive
-
 mksrcinfo:
 	@echo [MKSRCINFO] CURRENT_PACKAGE = $(CURRENT_PACKAGE)
 	@cd $(CURRENT_PACKAGE) && mksrcinfo
